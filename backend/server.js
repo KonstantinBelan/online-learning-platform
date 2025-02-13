@@ -8,6 +8,7 @@ const port = process.env.PORT || 3000 // Используем порт из .env
 
 const authRoutes = require('./routes/authRoutes')
 const courseRoutes = require('./routes/courseRoutes')
+const lessonRoutes = require('./routes/lessonRoutes')
 
 // Middleware
 app.use(cors())
@@ -25,6 +26,7 @@ mongoose
 // Routes (Здесь будут наши маршруты)
 app.use('/api/auth', authRoutes)
 app.use('/api/courses', courseRoutes)
+app.use('/api/lessons', lessonRoutes)
 
 // Start server
 app.listen(port, () => {

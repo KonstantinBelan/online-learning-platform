@@ -44,6 +44,14 @@ const lessonSchema = new Schema({
 		type: String, // Тип урока (например, video, text, quiz)
 		default: 'text',
 	},
+	hasHomework: {
+		type: Boolean,
+		default: false, // Есть ли у урока домашнее задание
+	},
+	homeworkDeadline: {
+		type: Number, // Срок сдачи домашнего задания в часах (например, 24)
+		default: 24,
+	},
 })
 
 const Lesson = mongoose.model('Lesson', lessonSchema)

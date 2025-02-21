@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const enrollmentController = require('../controllers/enrollmentController')
-const authMiddleware = require('../middleware/authMiddleware')
+const { authMiddleware } = require('../middleware/authMiddleware')
 
 // Маршрут для регистрации студента на курс (только для авторизованных пользователей)
 router.post('/', authMiddleware, enrollmentController.enrollStudent)
